@@ -8,6 +8,7 @@ import store from '@store'
 
 import Header from '@components/app-header';
 import Footer from '@components/app-footer';
+import PlayBar from '@pages/player/player-bar';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
           <Header />
           {renderRoutes(routes)}
           <Footer />
+          <PlayBar />
         </HashRouter>
       </Provider>
     );

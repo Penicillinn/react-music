@@ -1,20 +1,29 @@
-import React,{useEffect } from 'react';
-import { connect,useDispatch }from 'react-redux';
+import React, { memo } from 'react';
 
-import { RecommendAction } from '@store/recommend'
-/* eslint-disable */
-const Recommend = (props) => {
-    const dispath = useDispatch();
-    useEffect(() => {
-        const { getTopBanner } = props;
-        getTopBanner();
-    },[dispath])
+import TopBanners from './c-cpns/top-banners';
+import HotRecommend from './c-cpns/hot-recommend';
+import NewAblums from './c-cpns/new-albums';
 
-    return (
+import {
+    RecommendContent,
+    RecommendLeft,
+    RecommendRight
+}from './style';
+
+
+const Recommend = () => {
+    return(
         <div>
-            <h1>Recommend: { props.bannerList.length }</h1>
+            <TopBanners />
+            <RecommendContent className="wrap-v2">
+                <RecommendLeft>
+                    <HotRecommend />
+                    <NewAblums />
+                </RecommendLeft>
+                <RecommendRight></RecommendRight>
+            </RecommendContent>
         </div>
     )
 }
 
-export default connect(state => ({ bannerList: state.RecommendReducer.bannerList }),RecommendAction)(Recommend);
+export default memo(Recommend);

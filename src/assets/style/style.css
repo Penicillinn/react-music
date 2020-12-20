@@ -61,6 +61,9 @@ a {
     margin: 0 auto;
 }
 
+.sprite_00 {
+	background: url('../images/sprite_cover.png') no-repeat 0 9999px;
+}
 .sprite_01 {
 	background: url('../images/sprite_01.png') no-repeat 0 9999px;
 }
@@ -72,4 +75,7 @@ a {
 }
 .sprite_footer_01 {
 	background: url('../images/sprite_footer_01.png') no-repeat 0 9999px;
+}
+.sprite_bar {
+	background: url('../images/playbar_sprite.png') no-repeat 0 9999px;
 }
